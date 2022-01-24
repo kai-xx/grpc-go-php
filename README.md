@@ -18,7 +18,7 @@
 - 生成相应语言的文件命令
   ##### GO
   ```shell
-   protoc -I. --php_out=plugins=grpc:./php pb/user.proto
+   protoc -I. --go_out=plugins=grpc:./pb pb/user.proto
   ```
   ##### PHP
   ```shell
