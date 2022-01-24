@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../grpc-demo">
+      <sourceFolder url="file://$MODULE_DIR$/../grpc-demo/php-server/GPBMetadata" isTestSource="false" packagePrefix="GPBMetadata\" />
+      <sourceFolder url="file://$MODULE_DIR$/../grpc-demo/php-server/User" isTestSource="false" packagePrefix="User\" />
+      <sourceFolder url="file://$MODULE_DIR$/../grpc-demo/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../grpc-demo/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../grpc-demo/php-server/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/../grpc-demo/php-server/vendor/grpc/grpc" />
+      <excludeFolder url="file://$MODULE_DIR$/../grpc-demo/php-server/vendor/google/protobuf" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
