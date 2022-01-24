@@ -59,5 +59,5 @@ list($response, $status) = $client->UserPost($postRequest)->wait();
 if ($status->code !== Grpc\STATUS_OK) {
     echo "ERROR: " . $status->code . ", " . $status->details . PHP_EOL;
 }
-echo "post $response->getMsg()" . PHP_EOL;
+echo "post {$response->getMsg()}" . PHP_EOL;
 
