@@ -34,8 +34,13 @@ list($response, $status) = $client->UserIndex($indexRequest)->wait();
 if ($status->code !== Grpc\STATUS_OK) {
     echo "ERROR: " . $status->code . ", " . $status->details . PHP_EOL;
 }
-echo $response->getMsg() . PHP_EOL;
-
+/**
+ * @var $value \User\UserEntity
+ */
+foreach ($response->getData() as $key=>$value) {
+    echo "name =>{$value->getName()} --- age =>{$value->getAge()} " . PHP_EOL;
+}
+echo "index {$response->getMsg()}" . PHP_EOL;
 $viewRequest = new \User\UserViewRequest();
 $viewRequest->setUid(1);
 
@@ -43,8 +48,9 @@ list($response, $status) = $client->UserView($viewRequest)->wait();
 if ($status->code !== Grpc\STATUS_OK) {
     echo "ERROR: " . $status->code . ", " . $status->details . PHP_EOL;
 }
-echo $response->getMsg() . PHP_EOL;
-
+$view = $response->getData();
+echo "name =>{$view->getName()} --- age =>{$view->getAge()} " . PHP_EOL;
+echo "view {$response->getMsg()}" . PHP_EOL;
 $postRequest = new \User\UserPostRequest();
 $postRequest->setAge(12);
 $postRequest->setName("12312");
@@ -53,5 +59,5 @@ list($response, $status) = $client->UserPost($postRequest)->wait();
 if ($status->code !== Grpc\STATUS_OK) {
     echo "ERROR: " . $status->code . ", " . $status->details . PHP_EOL;
 }
-echo $response->getMsg() . PHP_EOL;
+echo "post $response->getMsg()" . PHP_EOL;
 
